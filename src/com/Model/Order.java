@@ -21,10 +21,10 @@ public class Order {
     @Override
     public String toString() {
         String strBuild = "";
-        strBuild += "Customer = " + customer.toString() + "\n";
+        strBuild += customer.toString();
         strBuild += "OrderID = " + orderID + "\n";
         strBuild += "Status = " + status + "\n";
-        strBuild += "Payment : \n" + payment.toString() + "\n";
+        strBuild += payment.toString() + "\n";
         strBuild += "Menu Detail : \n";
         for (int i = 0; i < listOfMenuDetail.size(); i++) {
             strBuild += listOfMenuDetail.get(i).toString();

@@ -39,28 +39,27 @@ public class Main {
 
         System.out.println("Order Pertama\n");
         CustomerManager.getInstance().setCustomer(c1);
-        Customer currentCustomer = CustomerManager.getInstance().getCustomer();
         listDetail.add(d1);
         listDetail.add(d2);
         listDetail.add(d3);
         listDetail.add(d4);
         listDetail.add(d5);
-        Order or1 = new Order(currentCustomer, "OR1", listDetail, null, p1);
+        Order or1 = new Order(CustomerManager.getInstance().getCustomer(), "OR1", listDetail, null, p1);
         os.AddNewOrder(or1);
         CustomerManager.getInstance().setCustomer(null);
 
-        System.out.println("--------------------------------------");
+        System.out.println("--------------------------------------\n");
 
         System.out.println("Order Kedua\n");
-        CustomerManager.getInstance().setCustomer(c1);
+        CustomerManager.getInstance().setCustomer(c2);
         listDetail2.add(d6);
         listDetail2.add(d7);
         listDetail2.add(d8);
-        Order or2 = new Order(currentCustomer, "OR2", listDetail2, null, v1);
+        Order or2 = new Order(CustomerManager.getInstance().getCustomer(), "OR2", listDetail2, null, v1);
         os.AddNewOrder(or2);
         CustomerManager.getInstance().setCustomer(null);
 
-        System.out.println("--------------------------------------");
+        System.out.println("--------------------------------------\n");
 
         System.out.println("\nCoba Print All Order");
         os.PrintAllOrderDetails();
