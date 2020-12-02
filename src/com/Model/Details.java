@@ -10,6 +10,15 @@ public class Details {
         this.quantity = quantity;
     }
 
+    @Override
+    public String toString() {
+        String strBuild = "";
+        strBuild += menuChoosen.toString() + "\n";
+        strBuild += "Quantity = " + quantity + "\n\n";
+
+        return strBuild;
+    }
+
     public Menu getMenuChoosen() {
         return menuChoosen;
     }

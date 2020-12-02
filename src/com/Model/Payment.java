@@ -2,20 +2,15 @@ package com.Model;
 
 abstract public class Payment {
 
-    private String orderID;
     private int amount;
 
-    public Payment(String orderID, int amount) {
-        this.orderID = orderID;
+    public Payment(int amount) {
         this.amount = amount;
     }
 
-    public String getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(String orderID) {
-        this.orderID = orderID;
+    @Override
+    public String toString() {
+        return "Amount = " + amount + "\n";
     }
 
     public int getAmount() {

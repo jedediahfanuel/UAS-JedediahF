@@ -3,10 +3,7 @@ package com.Model;
 public class CustomerManager {
 
     private static CustomerManager instance;
-    private Customer customer;
-
-    public CustomerManager() {
-    }
+    private Customer cm;
 
     public static CustomerManager getInstance() {
 
@@ -18,10 +15,12 @@ public class CustomerManager {
     }
 
     public Customer getCustomer() {
-        return customer;
+        return cm;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(Customer cm) {
+        this.cm = cm;
     }
+
+    private CustomerManager() {}
 }

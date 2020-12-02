@@ -12,6 +12,16 @@ public class Menu {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        String strBuild = "";
+        strBuild += "IDMenu = " + idMenu + '\n' +
+                "Name = " + name + '\n' +
+                "Price = " + price;
+
+        return strBuild;
+    }
+
     public String getIdMenu() {
         return idMenu;
     }

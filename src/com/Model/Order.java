@@ -8,12 +8,36 @@ public class Order {
     private String orderID;
     private ArrayList<Details> listOfMenuDetail = new ArrayList<>();
     private EnumStatus status;
+    private Payment payment;
 
-    public Order(Customer customer, String orderID, ArrayList<Details> listOfMenuDetail, EnumStatus status) {
+    public Order(Customer customer, String orderID, ArrayList<Details> listOfMenuDetail, EnumStatus status, Payment payment) {
         this.customer = customer;
         this.orderID = orderID;
         this.listOfMenuDetail = listOfMenuDetail;
         this.status = status;
+        this.payment = payment;
+    }
+
+    @Override
+    public String toString() {
+        String strBuild = "";
+        strBuild += "Customer = " + customer.toString() + "\n";
+        strBuild += "OrderID = " + orderID + "\n";
+        strBuild += "Status = " + status + "\n";
+        strBuild += "Payment : \n" + payment.toString() + "\n";
+        strBuild += "Menu Detail : \n";
+        for (int i = 0; i < listOfMenuDetail.size(); i++) {
+            strBuild += listOfMenuDetail.get(i).toString();
+        }
+        return strBuild;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     public Customer getCustomer() {

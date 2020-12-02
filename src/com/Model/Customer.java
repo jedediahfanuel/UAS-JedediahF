@@ -10,6 +10,16 @@ public class Customer {
         this.numOfPeople = numOfPeople;
     }
 
+    @Override
+    public String toString() {
+        String strBuild = "";
+        strBuild += "Name = " + name + "\n";
+        strBuild += "NumOfPeople = " + numOfPeople + "\n";
+
+        return strBuild;
+
+    }
+
     public String getName() {
         return name;
     }
