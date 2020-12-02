@@ -30,6 +30,10 @@ public class OrderSystem {
 
     }
 
+    public void PrintAllOrderDetails() {
+
+    }
+
     public OrderSystem(ArrayList<Order> listOfOrder) {
         this.listOfOrder = listOfOrder;
     }
