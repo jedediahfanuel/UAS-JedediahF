@@ -1,5 +1,5 @@
 // Nim  : 1119023
-// Nama : Jedeiah Fanuels
+// Nama : Jedediah Fanuel
 package com.View;
 
 import com.Model.*;
