@@ -1,9 +1,10 @@
+// Nim  : 1119023
+// Nama : Jedeiah Fanuels
 package com.View;
 
 import com.Model.*;
 
 import java.util.ArrayList;
-import java.util.Currency;
 
 public class Main {
 
