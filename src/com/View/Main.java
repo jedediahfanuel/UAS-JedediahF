@@ -49,7 +49,7 @@ public class Main {
         listDetail.add(d4);
         listDetail.add(d5);
         Order or1 = new Order(CustomerManager.getInstance().getCustomer(), "OR1", listDetail, null, p1);
-        os.AddNewOrder(or1);
+        os.addNewOrder(or1);
         CustomerManager.getInstance().setCustomer(null);
 
         System.out.println("--------------------------------------\n");
@@ -62,14 +62,14 @@ public class Main {
         listDetail2.add(d7);
         listDetail2.add(d8);
         Order or2 = new Order(CustomerManager.getInstance().getCustomer(), "OR2", listDetail2, null, v1);
-        os.AddNewOrder(or2);
+        os.addNewOrder(or2);
         CustomerManager.getInstance().setCustomer(null);
 
         System.out.println("--------------------------------------\n");
 
         // COBA PRINT ALL ORDER METHOD
         System.out.println("\nCoba Print All Order");
-        os.PrintAllOrderDetails();
+        os.printAllOrderDetails();
 
     }
 

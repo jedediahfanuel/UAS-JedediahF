@@ -7,36 +7,36 @@ public class OrderSystem {
     private ArrayList<Order> listOfOrder = new ArrayList<>();
 
     // ADD NEW ORDER
-    public void AddNewOrder(Order order) {
+    public void addNewOrder(Order order) {
         listOfOrder.add(order);
         System.out.println("Order added : " + order.getOrderID());
         order.setStatus(EnumStatus.INPUTTED);
-        SendToKitchen(order);
+        sendToKitchen(order);
     }
 
     // SEND TO KITCHEN
-    public void SendToKitchen(Order order) {
+    public void sendToKitchen(Order order) {
         System.out.println("Order is sent to kitchen : " + order.getOrderID());
         order.setStatus(EnumStatus.QUEUEONKITCHEN);
-        ProcessedByKitchen(order);
+        processedByKitchen(order);
     }
 
     // PROCESSED BY KITCHEN
-    public void ProcessedByKitchen(Order order) {
+    public void processedByKitchen(Order order) {
         System.out.println("Order is processed by kitchen : " + order.getOrderID());
         order.setStatus(EnumStatus.PROCESSED);
-        OutForCustomer(order);
+        outForCustomer(order);
     }
 
     // OUT FOR CUSTOMER
-    public void OutForCustomer(Order order) {
+    public void outForCustomer(Order order) {
         System.out.println("Order is delivered to customer : " + order.getOrderID());
         order.setStatus(EnumStatus.OUTFORCUSTOMER);
-        CalculateTotalPayment(order);
+        calculateTotalPayment(order);
     }
 
     // CALCULATED TOTAL PAYMENT
-    public void CalculateTotalPayment(Order order) {
+    public void calculateTotalPayment(Order order) {
         order.setStatus(EnumStatus.INVOICEREQUESTED);
 
         int biaya = 0;
@@ -55,11 +55,11 @@ public class OrderSystem {
         order.getPayment().setAmount(biaya);
         System.out.println("Order is Calculated : " + biaya);
 
-        Pay(order);
+        pay(order);
     }
 
     // PAY
-    public void Pay(Order order) {
+    public void pay(Order order) {
         if (order.getPayment() instanceof CreditCard) {
             System.out.println("Payment type : " + "Credit Card");
             System.out.println("CC Number : " + ((CreditCard) order.getPayment()).getCcNumber());
@@ -74,7 +74,7 @@ public class OrderSystem {
     }
 
     // PRINT ALL ORDER DETAIL
-    public void PrintAllOrderDetails() {
+    public void printAllOrderDetails() {
         String strBuild = "";
         for (int i = 0; i < listOfOrder.size(); i++) {
             strBuild += "List Of Order : \n" + listOfOrder.get(i).toString() + '\n';
