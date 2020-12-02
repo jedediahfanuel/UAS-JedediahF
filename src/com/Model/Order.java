@@ -6,7 +6,7 @@ public class Order {
 
     private Customer customer;
     private String orderID;
-    private ArrayList<Details> listOfMenuDetail = new ArrayList<>();
+    private ArrayList<Details> listOfMenuDetail;
     private EnumStatus status;
     private Payment payment;
 

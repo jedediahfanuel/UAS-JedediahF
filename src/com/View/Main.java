@@ -7,6 +7,7 @@ import java.util.Currency;
 
 public class Main {
 
+    // Deklarasi Dummy
     OrderSystem os = new OrderSystem();
 
     Customer c1 = new Customer("Jeddi", 5);
@@ -27,16 +28,17 @@ public class Main {
     Details d4 = new Details(m4, 1);
     Details d5 = new Details(m5, 1);
     ArrayList<Details> listDetail = new ArrayList<>();
-    Payment p1 = new CreditCard(95000, "CC1");
+    Payment p1 = new CreditCard(0, "CC1");
 
     Details d6 = new Details(m1, 2);
     Details d7 = new Details(m3, 1);
     Details d8 = new Details(m5, 4);
     ArrayList<Details> listDetail2 = new ArrayList<>();
-    Payment v1 = new Voucher(175000, "V1");
+    Payment v1 = new Voucher(0, "V1");
 
     public Main() {
 
+        // ORDER DUMMY PERTAMA
         System.out.println("Order Pertama\n");
         CustomerManager.getInstance().setCustomer(c1);
         listDetail.add(d1);
@@ -50,6 +52,7 @@ public class Main {
 
         System.out.println("--------------------------------------\n");
 
+        // ORDER DUMMY KEDUA
         System.out.println("Order Kedua\n");
         CustomerManager.getInstance().setCustomer(c2);
         listDetail2.add(d6);
@@ -61,6 +64,7 @@ public class Main {
 
         System.out.println("--------------------------------------\n");
 
+        // COBA PRINT ALL ORDER METHOD
         System.out.println("\nCoba Print All Order");
         os.PrintAllOrderDetails();
 

@@ -6,6 +6,7 @@ public class OrderSystem {
 
     private ArrayList<Order> listOfOrder = new ArrayList<>();
 
+    // ADD NEW ORDER
     public void AddNewOrder(Order order) {
         listOfOrder.add(order);
         System.out.println("Order added : " + order.getOrderID());
@@ -13,24 +14,28 @@ public class OrderSystem {
         SendToKitchen(order);
     }
 
+    // SEND TO KITCHEN
     public void SendToKitchen(Order order) {
         System.out.println("Order is sent to kitchen : " + order.getOrderID());
         order.setStatus(EnumStatus.QUEUEONKITCHEN);
         ProcessedByKitchen(order);
     }
 
+    // PROCESSED BY KITCHEN
     public void ProcessedByKitchen(Order order) {
         System.out.println("Order is processed by kitchen : " + order.getOrderID());
         order.setStatus(EnumStatus.PROCESSED);
         OutForCustomer(order);
     }
 
+    // OUT FOR CUSTOMER
     public void OutForCustomer(Order order) {
         System.out.println("Order is delivered to customer : " + order.getOrderID());
         order.setStatus(EnumStatus.OUTFORCUSTOMER);
         CalculateTotalPayment(order);
     }
 
+    // CALCULATED TOTAL PAYMENT
     public void CalculateTotalPayment(Order order) {
         order.setStatus(EnumStatus.INVOICEREQUESTED);
 
@@ -53,6 +58,7 @@ public class OrderSystem {
         Pay(order);
     }
 
+    // PAY
     public void Pay(Order order) {
         if (order.getPayment() instanceof CreditCard) {
             System.out.println("Payment type : " + "Credit Card");
@@ -67,6 +73,7 @@ public class OrderSystem {
         order.setStatus(EnumStatus.PAID);
     }
 
+    // PRINT ALL ORDER DETAIL
     public void PrintAllOrderDetails() {
         String strBuild = "";
         for (int i = 0; i < listOfOrder.size(); i++) {
