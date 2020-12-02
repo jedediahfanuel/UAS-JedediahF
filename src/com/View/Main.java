@@ -41,6 +41,7 @@ public class Main {
 
         // ORDER DUMMY PERTAMA
         System.out.println("Order Pertama\n");
+        // Set Online Customer
         CustomerManager.getInstance().setCustomer(c1);
         listDetail.add(d1);
         listDetail.add(d2);
@@ -55,6 +56,7 @@ public class Main {
 
         // ORDER DUMMY KEDUA
         System.out.println("Order Kedua\n");
+        // Set Online Customer
         CustomerManager.getInstance().setCustomer(c2);
         listDetail2.add(d6);
         listDetail2.add(d7);
